@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+
+.navbar-brand{
+    font-weight: bold;
+    color: #0b0b0b;
+}
+html,body{
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.main-div,.container{
+    height: 100%;
+    width: 100%;
+    background-color: #e2b1ea;
+}
+
+.content-div{
+height: 100%;
+}
+
+.img-fluid{
+    height: 500px;
+    width: 500px;
+    /* background: url('public/mainBG.jpg'); */
+
+}

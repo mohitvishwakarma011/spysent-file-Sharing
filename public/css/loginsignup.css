@@ -1,0 +1,219 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body,html{
+    height: 100%;
+    width: 100%;
+
+}
+
+.container{
+    height: 100%;
+    width: 100%;
+    font-family: sans-serif;
+    background: linear-gradient(rgb(150 72 163),rgb(183 178 178));
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+   
+    
+}
+
+.container.blur{
+    filter: blur(5px);
+}
+
+.card{
+    width:350px;
+    height: 500px;
+    box-shadow: 0 0 40px 20px rgba(0,0,0,0.3);
+    perspective: 1000px;
+    border-radius: 12px;
+}
+
+.inner-box{
+    position: relative;
+    width: 100%;
+    height: 100%;
+   
+    transform-style: preserve-3d;
+    transition: transform 1s;
+
+}
+.card-front, .card-back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-position: center;
+    background-size: cover;
+    background-image: linear-gradient(rgb(150 72 163),rgb(183 178 178));
+    box-sizing: border-box;
+    backface-visibility: hidden;
+    padding: 50px;
+    border-radius: 12px;
+}
+
+.card-back{
+    transform: rotateY(180deg);
+}
+
+.card h2{
+    font-weight: normal;
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.input-box{
+    width: 100%;
+    background: transparent;
+    border: 1px solid white;
+    margin: 6px;
+    height: 32px;
+    border-radius: 32px;
+    padding: 0 10px;
+    box-sizing: border-box;
+    outline: none;
+    text-align: center;
+    color: #fff;
+}
+
+::placeholder{
+    color: #cbc9c9;
+    font-size: 12px;
+    
+}
+
+button{
+    width: 100%;
+    background: transparent;
+    border: 1px solid white;
+    margin: 35px 0 10px;
+    height: 32px;
+    font-size: 12px;
+    border-radius: 20px;
+    padding: 0px 10px;
+    box-sizing: border-box;
+    outline:none;
+    color: #fff;
+    cursor: pointer;
+}
+
+.submit-btn{
+    position: relative;
+}
+.submit-btn::after{
+    content: '\27a4';
+    color: #333;
+    line-height: 32px;
+    font-size: 17px;
+    height: 32px;
+    width: 32px;
+    border-radius: 50%;
+    background: white;
+    position: absolute;
+    right: -1px;
+    top: -1px;
+
+}
+
+span{
+    font-size: 13px;
+    margin-left: 10px;
+}
+
+.card .btn{
+    margin-top: 70px;
+    margin-top: 20px;
+    /* outline: none; */
+
+}
+
+
+
+.card a{
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+    font-size: 13px;
+    margin-top: 8px;
+
+}
+
+.container .go-home{
+    width: 200px;
+    background: transparent;
+    border: 1px solid white;
+    margin: 35px 0 10px;
+    height: 32px;
+    
+    border-radius: 20px;
+    padding: 0px 10px;
+    box-sizing: border-box;
+    outline: none;
+    color: #fff;
+    cursor:pointer;
+    text-align: center;
+    padding: 3px;
+    font-size:17px ;
+    box-shadow:0 0 16px 6px rgba(0,0,0,0.3);
+    text-decoration: none;
+
+}
+
+.go-home:focus{
+    text-decoration: none;
+}
+
+
+/* CSS code for the modal */
+.modal {
+    position: absolute;
+    top: 35%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin-left: 25%;
+    background:linear-gradient(rgb(240 190 249),rgb(221 166 209));
+    display: none;
+    justify-content: center;
+    align-items: center;
+    height: 185px;
+    width: 50%;
+    border-radius: 20px;
+    
+  }
+  
+  .modal-content {
+    background-color: transparent;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    text-align: center;
+   height: 100%;
+  }
+  
+  .modal-content h2 {
+    margin-top: 0;
+  }
+  
+  .modal-content button {
+    margin-top: 10px;
+    height: 35px;
+    width: 67px;
+    /* border: 4px solid; */
+    background: #c0bbbb;
+    text-align: center;
+  }
+  
+  .modal.show {
+    display: flex;
+  }
+  

@@ -22,7 +22,7 @@ let storage = multer.diskStorage({
 //_________________________________________________________________________________________________________
 let upload = multer({
   storage,
-  limit: { fileSize: 1000000 * 10 },
+  limit: { fileSize: 1000000 * 100 },
 }).single("myfile");
 
 
@@ -34,7 +34,7 @@ router.post("/", (req, res) => {
   //store file
   upload(req, res, async (err) => {
 
-    // Validate request
+    // Validate request 
 
   if (!req.file) {
     return res.json({ error: "All fields are required. " });
@@ -44,7 +44,7 @@ router.post("/", (req, res) => {
     if (err) {
       return res.status(500).send({ error: err.message });
     }
-    //store into database
+    //store into database 
 
     const file =new File({
         filename: req.file.filename,
@@ -72,7 +72,7 @@ router.post('/send',async(req,res)=>{
   }
 
   //get data from database 
-  // const file = File.findOne({uuid:uuid}); this line modified chatGPT
+  // const file = File.findOne({uuid:uuid}); this line modified.. chatGPT
   const file = await File.findOne({uuid:uuid}).exec();
   
   // console.log(file);
@@ -96,9 +96,10 @@ router.post('/send',async(req,res)=>{
     text:`${emailFrom} shared a e-mail with you.`,
     html: require('../services/emailTemplate')({
       emailFrom: emailFrom,
-      downloadLink:`${process.env.APP_BASE_URL}/files/${file.uuid}`}),
+      downloadLink:`${process.env.APP_BASE_URL}/files/${file.uuid}`,
       size: parseInt(file.size/1000)+' kb',
       expires:'24 hours'
+    })
   })
 
   res.send({success:true});
