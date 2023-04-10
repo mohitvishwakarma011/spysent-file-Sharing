@@ -2,11 +2,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* overflow: hidden; */
 }
 
 body,html{
     height: 100%;
     width: 100%;
+  
 
 }
 
@@ -14,8 +16,8 @@ body,html{
     height: 100%;
     width: 100%;
     font-family: sans-serif;
-    background: linear-gradient(rgb(150 72 163),rgb(183 178 178));
-    color: #ffffff;
+    background: rgb(200, 195, 195);
+    color: #000000;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -25,6 +27,9 @@ body,html{
     
 }
 
+.navbar-margin{
+    margin-left:25px;
+}
 .container.blur{
     filter: blur(5px);
 }
@@ -32,9 +37,10 @@ body,html{
 .card{
     width:350px;
     height: 500px;
-    box-shadow: 0 0 40px 20px rgba(0,0,0,0.3);
+    box-shadow: 0 0 19px 0px rgba(0,0,0,0.3);
     perspective: 1000px;
     border-radius: 12px;
+    margin-top: 65px;
 }
 
 .inner-box{
@@ -52,7 +58,7 @@ body,html{
     height: 100%;
     background-position: center;
     background-size: cover;
-    background-image: linear-gradient(rgb(150 72 163),rgb(183 178 178));
+    background-color: #80808005;
     box-sizing: border-box;
     backface-visibility: hidden;
     padding: 50px;
@@ -73,7 +79,7 @@ body,html{
 .input-box{
     width: 100%;
     background: transparent;
-    border: 1px solid white;
+    border: 2px solid rgb(0, 0, 0);
     margin: 6px;
     height: 32px;
     border-radius: 32px;
@@ -81,12 +87,12 @@ body,html{
     box-sizing: border-box;
     outline: none;
     text-align: center;
-    color: #fff;
+    color: #000000;
 }
 
 ::placeholder{
-    color: #cbc9c9;
-    font-size: 12px;
+    color: #00000090;
+    font-size: 20px;
     
 }
 
@@ -94,14 +100,14 @@ button{
     width: 100%;
     background: transparent;
     border: 1px solid white;
-    margin: 35px 0 10px;
+    margin: 35px 0 7px 6px;
     height: 32px;
     font-size: 12px;
     border-radius: 20px;
     padding: 0px 10px;
     box-sizing: border-box;
     outline:none;
-    color: #fff;
+    color: #000000;
     cursor: pointer;
 }
 
@@ -147,7 +153,7 @@ span{
 
 }
 
-.container .go-home{
+/* .container .go-home{
     width: 200px;
     background: transparent;
     border: 1px solid white;
@@ -166,11 +172,11 @@ span{
     box-shadow:0 0 16px 6px rgba(0,0,0,0.3);
     text-decoration: none;
 
-}
+} */
 
-.go-home:focus{
+/* .go-home:focus{
     text-decoration: none;
-}
+} */
 
 
 /* CSS code for the modal */
@@ -217,3 +223,45 @@ span{
     display: flex;
   }
   
+
+  /* ________________________________________________________________________ */
+
+  .navbar-brand{
+    font-weight: bold;
+    color: #0b0b0b;
+}
+
+.main-div,.container{
+    height: 100%;
+    width: 100%;
+    background-color: #00000000;
+}
+
+.content-div{
+height: 100%;
+}
+
+
+.bg-custom{
+   background-color: #ffffff;
+}
+
+.navbar-margin{
+    margin-left:25px;
+}
+
+.icons{
+    height: 23px;
+    width: 27px;
+}
+
+.navbar {
+    box-shadow: 9px 1px 20px 1px grey;
+}
+.dropdown-menu[data-bs-popper] {
+    left: 50px;
+}
+
+.container-fluid{
+    margin-left: 55px;
+}

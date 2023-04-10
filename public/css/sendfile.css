@@ -1,0 +1,342 @@
+
+:root{
+    --main-bg-color:#bcd0ed;
+    --container-width:500px;
+}
+
+body,html{
+    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
+    background:var(--main-bg-color);
+    height: 100%;
+    padding:0 ;
+    margin: 0;
+    /* border:2px solid red; */
+    overflow: hidden;
+}
+body{
+    /* display: table-row; */
+    /* align-items: center; */
+    
+
+}
+
+
+
+ /* ---------------------------------------------------------------- */
+
+ .img-fluid{
+    height: 500px;
+    width: 500px;
+    /* background: url('public/mainBG.jpg'); */
+
+}
+
+.navbar-brand{
+    font-weight: bold;
+    color: #0b0b0b;
+}
+
+.main-div,.container{
+    height: 100%;
+    width: 100%;
+    background-color: #00000000;
+}
+
+.content-div{
+height: 100%;
+}
+
+
+.bg-custom{
+   background-color: #ffffff;
+}
+
+.navbar-margin{
+    margin-left:25px;
+}
+
+.icons{
+    height: 23px;
+    width: 27px;
+}
+
+.navbar {
+    box-shadow: 9px 1px 20px 1px grey;
+}
+.dropdown-menu[data-bs-popper] {
+    left: 50px;
+}
+
+.container-fluid{
+    margin-left: 55px;
+}
+
+
+/* ---------------------------------------------------------------------------------------------------- */
+
+.mainDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+ .upload-container ,.drop-zone {
+    display:flex;
+    align-items: center;
+    justify-content:center;
+    flex-direction: column;
+   
+}
+
+.upload-container{
+    display: table-cell;
+    background: #ffffff;
+    border-radius: 25px;
+    box-shadow: 0px 20px 20px rgb(105, 104, 104);
+    /* width: 600px; */
+    /* padding: 0px 0px 0px 10px; */
+
+
+}
+.drop-zone{
+    
+    width: var(--container-width);
+    min-height: 200px;
+    border: 2px dashed rgb(109, 170, 240);
+    
+    margin: 20px;
+    border-radius: 10px;
+    transition:all .2s ease;
+    
+}
+
+.dragged.drop-zone{
+    background: #cedbef;
+    border-color: rgb(6, 81, 143);
+}
+
+.icon-container{
+    width: 75px;
+    height: 90px;
+    position: relative;
+    /* margin: auto; */
+    
+    
+}
+
+.icon-container img
+{
+    width: 75px;
+    position: absolute;
+    /* padding-left: 90px;
+    padding-right: 81px; */
+    transform-origin: bottom;
+    transition: transform 250ms ease-in-out ;
+}
+
+.icon-container,.center{
+    z-index: 2;
+}
+
+.icon-container .left , .icon-container .right{
+    filter: grayscale(.9);
+    transform:scale(.9);
+}
+
+.dragged .icon-container .right{
+    transform: rotate(10deg) translateX(20px) scale(.9);
+}
+.dragged  .icon-container .left{
+    transform: rotate(-10deg) translateX(-20px) scale(.9);
+}
+
+.dragged .icon-container .center{
+    transform: translateY(-5px);
+}
+
+#fileInput{
+    display: none;
+}
+
+.browseBtn{
+    color: rgb(255, 0, 0);
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.progress-container{
+    width: var(--container-width);
+    height: 70px;
+    border: 2px solid var(--main-bg-color);
+    /* margin: 20px;
+    border-radius: 5px; */
+    margin-bottom: 25px;
+    border-radius: 12px;
+    position:relative;
+    display: none;
+}
+
+.progress-container .bg-progress{
+
+    background: var(--main-bg-color);
+    
+   width: 0px;
+   height:70px;
+   
+    transform-origin: left;
+    border-top-left-radius: 9px;
+    border-bottom-left-radius: 9px;
+    border-top-right-radius: 9px;
+    border-bottom-right-radius: 9px;
+    transition: width 0.25s linear;
+    position:absolute;
+    /* border: 2px solid; */
+}
+
+.progress-container .inner-container{
+    position:relative;
+    z-index: 1;
+    margin: 10px;
+
+}
+
+.percent-container{
+    font-size: 13px;
+    margin: 5px;
+    opacity: 0.5;
+}
+
+.progress-bar{
+    height:5px;
+    width: 0%;
+    background-color:  rgb(68, 162, 238);
+    border-radius: 3px;
+    transform-origin: left;
+    /* transform:scaleX(0); */
+    transition: width 0.25s linear;
+}
+
+.sharing-container{
+    width: var(--container-width);
+    margin: 20px;
+    display: none;
+  
+
+}
+
+
+.sharing-container .link-container input{
+
+    /* width: var(--container-width); */
+    width: 94%;
+    border: 2px dashed var(--main-bg-color);
+    border-radius: 3px;
+    padding: 10px 15px;
+    box-sizing:border-box;
+    font-size: 18px;
+    background-color: #e6ebf1;
+    opacity: 0.72;
+}
+.sharing-container .link-container input:focus{
+        outline: none;
+}
+
+.link-container img{
+    cursor: pointer;
+}
+
+p.expire,  p.assist{
+    text-align: center;
+    opacity: 0.67;
+    font-weight:bold;
+    font-size: 15px;
+}
+
+.title{
+    font-weight:bold;
+    opacity: 0.8;
+
+}
+
+.email-container{
+
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+
+
+.email-container form{
+    width: 100%;
+    border: 3px solid var(--main-bg-color);
+    border-radius: 6px;
+    padding: 9px;
+
+}
+.email-container .field{
+    display: flex;
+    width: 420px;
+    box-sizing: border-box;
+    justify-content: space-between;
+    margin-top: 10px;
+    margin-bottom: 15px;
+
+}
+
+.email-container label{
+    font-weight: bold;
+    opacity: 0.78;
+}
+
+.email-container input{
+    border: none;
+    border-bottom: 2px solid var(--main-bg-color);
+    
+}
+.email-container input:focus{
+    outline: none;
+}
+
+.email-container button{
+    margin-left: 45%;
+    width: 90px;
+    height: 30px;
+    font-size:18px;
+    border: none;
+    color:#186ff1a0;
+    background-color: #e2ebf9;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.toast{
+    position: absolute;
+    bottom: 10px;
+    right: 50%;
+    transform: translate(50%, 60px);
+    padding: 10px 20px;
+    background: rgb(163, 242, 193);
+    color: #069e5f;
+    border-radius: 5px;
+    font-size: 18px;
+    font-weight: 600;
+    box-shadow: 0px 10px 15px -3px rgba(1, 0, 0, 0.5),
+      0px 4px 6px -2px rgba(0, 0, 0, 0.05);
+    transition: transform ease-in-out 0.2s;
+  }
+
+  .show.toast {
+    transform: translate(50%, 0);
+  }
+
+  .bg-image{
+    background: url('/Download-cuate.svg') no-repeat center;
+    width: 52vw;
+    height: 70vh;
+    display: table-cell;
+
+  }
+
+  /* ---------------------------------------------------------------- */
+  
