@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: BrandonTextWeb-Bold,sans-serif;
    
 }
 
@@ -11,6 +12,118 @@ html,body{
     width: 100%;
     overflow: hidden;
 }
+body{
+    background-color: #051622ed;
+}
+
+/* ------------------Navbar CSS--------------------- */
+
+.bg-custom{
+    background-color: #051622;
+ }
+ 
+.navbar-brand{
+    font-weight: bold;
+    color: #1BA098;
+    margin:0px;
+    padding: 0px 5px 6px;
+    transition: 0.3s color;
+}
+.navbar-brand:hover{
+    color:#DEB992 ;
+    
+}
+/* 
+.home-btn{
+    font-size:17px;
+    color: #1BA098 !important;
+    margin:0px;
+    
+    transition: 0.3s color;
+
+}
+
+.home-btn:hover{
+    color:#DEB992 ;
+    border-bottom: #000000;
+    
+} */
+
+/* .navbar-nav .nav-item a{
+    font-size:17px;
+    color: #1BA098 !important;
+    margin:0px;
+    
+    transition: 0.3s color;
+}
+*/
+
+.navbar-collapse .navbar-nav .nav-item>a{
+    color: #1BA098 !important ;
+    border-bottom: 2px solid #051622;
+
+    
+} 
+
+.navbar-collapse .nav-item:hover>a{
+    color:#DEB992 !important;
+    border-color: #DEB992;
+
+}
+
+.navbar-margin{
+    margin-left:25px;
+}
+
+
+.navbar-nav{
+    margin-left: 50px
+}
+
+li.nav-item {
+    margin-right: 30px;
+}
+
+.dropdown-menu[data-bs-popper] {
+   left: unset;
+   margin-top: 10px
+}
+
+
+.user-dropdown-menu{
+
+   
+    left: 25% !important;
+    background-color: #051622 !important;
+    
+}
+.user-dropdown-menu a{
+    color: #DEB992;
+}
+.user-dropdown-menu li:hover .dropdown-item{
+    background-color: #0c324edb !important;
+    color: #DEB992 !important;
+    
+}
+
+.files-dropdown-menu{
+
+   
+    left: 25% !important;
+    background-color: #051622 !important;
+    
+}
+.files-dropdown-menu a{
+    color: #DEB992;
+}
+.files-dropdown-menu li:hover .dropdown-item{
+    background-color: #0c324edb !important;
+    color: #deb99265 !important;
+    
+}
+
+/* ----------------------------- */
+
 
 .img-fluid{
     height: 500px;
@@ -19,10 +132,7 @@ html,body{
 
 }
 
-.navbar-brand{
-    font-weight: bold;
-    color: #0b0b0b;
-}
+
 
 .main-div,.container{
     height: 100%;
@@ -35,25 +145,16 @@ height: 100%;
 }
 
 
-.bg-custom{
-   background-color: #ffffff;
-}
 
-.navbar-margin{
-    margin-left:25px;
-}
+
 
 .icons{
     height: 23px;
     width: 27px;
 }
 
-.navbar {
-    box-shadow: 9px 1px 20px 1px grey;
-}
-.dropdown-menu[data-bs-popper] {
-    left: 50px;
-}
+
+
 
 .container-fluid{
     margin-left: 55px;
@@ -82,4 +183,70 @@ height: 100%;
     margin-top: 25%;
     height: 20%;
     width: 20%;
+}
+
+.row{
+
+    height: 50%;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+
+}
+.beforeloginhome-content{
+    height: 100%;
+}
+
+.beforeloginhome-content h4, .beforeloginhome-content h2{
+    color: white;
+}
+
+.col{
+height: 100%;
+}
+
+.greet{
+    padding-top: 90px;
+    
+}
+.greet h2{
+    font-weight: bold;
+    color: #DEB992;
+}
+
+.greet h4 {
+    font-size: 48px;
+    color: #1BA098;
+}
+
+.links{
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    
+    height: 35px;
+    text-align: center;
+    
+    text-decoration: none;
+    margin: 150px 40px;
+}
+
+.links a{
+
+    text-decoration: none;
+    line-height: 1.8;
+    color: #DEB992;
+    height: 100%;
+    width: 100%;
+    background-color: #051622;
+   
+    border-radius: 22px;
+}
+
+.links a:hover #anchor{
+    color: #051622 ;
+    background-color: #DEB992 ;
+    
 }

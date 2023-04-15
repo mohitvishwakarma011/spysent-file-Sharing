@@ -3,72 +3,114 @@
     --main-bg-color:#bcd0ed;
     --container-width:500px;
 }
-
-body,html{
-    /* font-family: Verdana, Geneva, Tahoma, sans-serif; */
-    background:var(--main-bg-color);
-    height: 100%;
-    padding:0 ;
+*{
     margin: 0;
-    /* border:2px solid red; */
-    overflow: hidden;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: BrandonTextWeb-Bold,sans-serif;
+   
+}
+body,html{
+    height: 100%;
 }
 body{
-    /* display: table-row; */
-    /* align-items: center; */
+        background-color: #051622ed;
+    }
     
 
+
+
+ /* -------------------------------Navbar --------------------------------- */
+
+ .bg-custom{
+    background-color: #051622;
 }
 
-
-
- /* ---------------------------------------------------------------- */
-
- .img-fluid{
+.img-fluid{
     height: 500px;
     width: 500px;
-    /* background: url('public/mainBG.jpg'); */
-
 }
 
 .navbar-brand{
     font-weight: bold;
-    color: #0b0b0b;
+    color: #1BA098;
+    margin:0px;
+    padding: 0px 5px 6px;
+    transition: 0.3s color; 
 }
 
-.main-div,.container{
-    height: 100%;
-    width: 100%;
-    background-color: #00000000;
+.navbar-brand:hover{
+    color:#DEB992 ;
+    
 }
 
-.content-div{
-height: 100%;
+.container-fluid{
+    margin-left: 55px;
 }
 
 
-.bg-custom{
-   background-color: #ffffff;
+.navbar-collapse .navbar-nav .nav-item>a{
+    color: #1BA098 !important ;
+    border-bottom: 2px solid #051622;
+
+    
+} 
+
+.navbar-collapse .nav-item:hover>a{
+    color:#DEB992 !important;
+    border-color: #DEB992;
+
 }
 
 .navbar-margin{
     margin-left:25px;
 }
 
-.icons{
-    height: 23px;
-    width: 27px;
+
+.navbar-nav{
+    margin-left: 50px
 }
 
-.navbar {
-    box-shadow: 9px 1px 20px 1px grey;
+li.nav-item {
+    margin-right: 30px;
 }
+
 .dropdown-menu[data-bs-popper] {
-    left: 50px;
+   left: unset;
+   margin-top: 10px
 }
 
-.container-fluid{
-    margin-left: 55px;
+
+.user-dropdown-menu{
+
+   
+    left: 25% !important;
+    background-color: #051622 !important;
+    
+}
+.user-dropdown-menu a{
+    color: #DEB992;
+}
+.user-dropdown-menu li:hover .dropdown-item{
+    background-color: #0c324edb !important;
+    color: #DEB992 !important;
+    
+}
+
+.files-dropdown-menu{
+
+   
+    left: 25% !important;
+    background-color: #051622 !important;
+    
+}
+.files-dropdown-menu a{
+    color: #DEB992;
+}
+.files-dropdown-menu li:hover .dropdown-item{
+    background-color: #0c324edb !important;
+    color: #deb99265 !important;
+    
 }
 
 
@@ -78,6 +120,7 @@ height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding-top: 20px;
 }
 
  .upload-container ,.drop-zone {
@@ -90,9 +133,9 @@ height: 100%;
 
 .upload-container{
     display: table-cell;
-    background: #ffffff;
+    background: #0e3f62;
     border-radius: 25px;
-    box-shadow: 0px 20px 20px rgb(105, 104, 104);
+    box-shadow: 1px 1px 40px black;
     /* width: 600px; */
     /* padding: 0px 0px 0px 10px; */
 
@@ -102,7 +145,7 @@ height: 100%;
     
     width: var(--container-width);
     min-height: 200px;
-    border: 2px dashed rgb(109, 170, 240);
+    border: 2px dashed #051622ed;
     
     margin: 20px;
     border-radius: 10px;
@@ -159,7 +202,7 @@ height: 100%;
 }
 
 .browseBtn{
-    color: rgb(255, 0, 0);
+    color: #DEB992;;
     cursor: pointer;
     text-decoration: underline;
 }
@@ -229,13 +272,14 @@ height: 100%;
 
     /* width: var(--container-width); */
     width: 94%;
-    border: 2px dashed var(--main-bg-color);
+    border: 2px dashed #051622ed;
     border-radius: 3px;
     padding: 10px 15px;
     box-sizing:border-box;
     font-size: 18px;
-    background-color: #e6ebf1;
+    background-color: #0d1b2c;
     opacity: 0.72;
+    color: #1BA098;
 }
 .sharing-container .link-container input:focus{
         outline: none;
@@ -247,14 +291,15 @@ height: 100%;
 
 p.expire,  p.assist{
     text-align: center;
-    opacity: 0.67;
     font-weight:bold;
     font-size: 15px;
+    color: #DEB992;
 }
 
 .title{
     font-weight:bold;
     opacity: 0.8;
+    color: #1BA098;
 
 }
 
@@ -286,12 +331,13 @@ justify-content: center;
 
 .email-container label{
     font-weight: bold;
-    opacity: 0.78;
+    color: #0d1b2c;
 }
 
 .email-container input{
     border: none;
     border-bottom: 2px solid var(--main-bg-color);
+    background: none;
     
 }
 .email-container input:focus{
@@ -337,6 +383,5 @@ justify-content: center;
     display: table-cell;
 
   }
-
   /* ---------------------------------------------------------------- */
   

@@ -27,10 +27,11 @@
                 <h2>Log In</h2>
                 <form id="login-form">
                   <input
-                    type="username"
+                    type="email"
                     class="input-box"
-                    placeholder="username"
-                    name="username"
+                    placeholder="Email Id"
+                    name="email"
+                    
                     required
                   />
                   <input
@@ -38,10 +39,11 @@
                     class="input-box"
                     placeholder="Password"
                     name="password"
+                   
                     required
                   />
-                  <button type="submit" class="submit-btn">Login</button>
-                  <input type="checkbox" name="remember" /><span>Remember Me</span>
+                  <button type="submit" class="submit-btn">login</button>
+                  <!-- <input type="checkbox" name="remember" /><span>Remember Me</span> -->
                 </form>
                 <button type="button" class="btn" onclick="openRegister()">
                   I'm New Here
@@ -85,7 +87,7 @@
                   <button type="submit" class="submit-btn" id="submit-btn">
                     Submit
                   </button>
-                  <input type="checkbox" /><span>Remember Me</span>
+                  <!-- <input type="checkbox" /><span>Remember Me</span> -->
                 </form>
                 <button type="button" class="btn" onclick="openLogin()">
                   I've an account
@@ -106,6 +108,15 @@
         <h2></h2>
         <p id="error-message"></p>
         <button id="close-modal-button">OK</button>
+      </div>
+    </div>
+
+    <div id="valid-data-modal" class="modal">
+      <div class="modal-content">
+        <h2>Warning!</h2>
+       <div id="valid-modal-show-error"></div>
+        
+        <button id="close-valid-modal-button">OK</button>
       </div>
     </div>
     
@@ -149,6 +160,7 @@
           username: usernameInput.value,
           email: emailInput.value,
           password: passwordInput.value,
+          confirmPassword:rePasswordInput.value
         };
 
         fetch("/signup/new", {
@@ -162,13 +174,18 @@
             return response.json();
           })
           .then((response) => {
-            if (response.shouldreg) {
+
+
+           if(response.isValid){
+            showValidModal(response,'Warning!');
+           }
+           else if (response.shouldreg) {
               showErrorModal(
                 `you have been successfully registered click on "OK" to go to Login page`,
                 "SUCCESSFUL"
               );
             } else {
-              let toShow = `the user with username ${response.data.username} is already registered..Please try to log-in! `;
+              let toShow = `the user with email ${response.data.email} is already registered..Please try to log-in! `;
               showErrorModal(toShow, "Oops!");
             }
           })
@@ -190,14 +207,15 @@
 
       function sendDataforLogin() {
         const usernameInput = document.querySelector(
-          '#login-form input[name="username"]'
+          '#login-form input[name="email"]'
         );
+       
         const passwordInput = document.querySelector(
           '#login-form input[name="password"]'
         );
-
+        
         const formData = {
-          username: usernameInput.value,
+          email: usernameInput.value,
           password: passwordInput.value,
         };
 
@@ -212,9 +230,14 @@
             return response.json();
           })
           .then((response) => {
+
             if (response.shouldlogin) {
               window.location.href = "/aloginhome";
               console.log("logged-In");
+            }
+            else if(response.IP){
+              showErrorModal(response.IP,"error!");
+
             } else {
               showErrorModal(`the user is not registered!`, "Sorry!");
             }
@@ -226,24 +249,51 @@
 
        // JavaScript code to show the modal with the error/success message:-
        const modal = document.getElementById("error-modal");
-      const errorMessage = document.getElementById("error-message");
-      const modalHeading = document.querySelector(".modal-content h2");
-      const closeModalButton = document.getElementById("close-modal-button");
-      
+       const errorMessage = document.getElementById("error-message");
+       const modalHeading = document.querySelector(".modal-content h2");
+       const closeModalButton = document.getElementById("close-modal-button");
+       
+       
+       // When an error/success occurs, set the error/success message and show the modal:-
+       function showErrorModal(message, state) {
+         errorMessage.textContent = message;
+         modalHeading.textContent = state;
+         
+         container.classList.add("blur");
+         modal.classList.add("show");
+        }
 
-      // When an error/success occurs, set the error/success message and show the modal:-
-      function showErrorModal(message, state) {
-        errorMessage.textContent = message;
-        modalHeading.textContent = state;
+        //setup for valid modal
+        const validModal = document.getElementById("valid-data-modal");
+        const closeValidModalButton = document.getElementById("close-valid-modal-button");
+
+      function showValidModal(response,state)
+      {
+       const validmodalShow = document.getElementById('valid-modal-show-error');
+       let elements='';
+
+       for (const key in response.errors) {
+        elements +=`<h3> ${response.errors[key]}</h3>`;
+          
+        }
+        validmodalShow.innerHTML=elements;
 
         container.classList.add("blur");
-        modal.classList.add("show");
-      }
+        validModal.classList.add("show");
+       }
+      
 
       // When the user clicks the close button, hide the modal:-
       closeModalButton.addEventListener("click", function () {
         modal.classList.remove("show");
         window.location.href = "/signup";
+      });
+      
+      closeValidModalButton.addEventListener("click", function () {
+        validModal.classList.remove("show");
+        container.classList.remove("blur");
+
+      
       });
 
       

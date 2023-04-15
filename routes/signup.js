@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const UsersignUp = require("../models/userSignupSchema");
-// const validateSignUpData = require("../validation/validatesignup");
+const validateSignUpData = require("../validation/validatesignup");
 
 const multer = require("multer");
 const upload = multer();
@@ -9,10 +9,19 @@ router.get("/", (req, res) => {
 });
 
 router.post("/new", upload.none(), async (req, res) => {
-  const foundData = await UsersignUp.findOne({ username: req.body.username });
-  console.log(foundData);
+
+  //validation:-
+  let errors = validateSignUpData(req.body);
+  // console.log(errors.errors);
+  if(Object.keys(errors.errors).length>0){
+    res.send(errors);
+  }else{
+
+    
+    const foundData = await UsersignUp.findOne({ email: req.body.email });
+  // console.log(foundData);
   if (foundData != null) {
-    console.log("User is already registered!");
+    // console.log("User is already registered!");
     const toSend = {
       shouldreg: false,
       data: foundData,
@@ -26,31 +35,43 @@ router.post("/new", upload.none(), async (req, res) => {
     });
 
     const usersaved = await user.save();
-    console.log(usersaved);
+    // console.log(usersaved);
     const toSend = {
       shouldreg: true,
       data: usersaved,
     };
     res.send(toSend);
   }
+}
 });
 
 
 router.post("/exist", upload.none(), async (req, res) => {
-  const foundData = await UsersignUp.findOne({ username: req.body.username });
+  console.log(req.body.email);
+  const foundData = await UsersignUp.findOne({ email: req.body.email });
   console.log(foundData);
   if (foundData != null) {
-    req.session.username=req.body.username;
-    console.log("User is registered..can log him in!");
-    const toSend = {
-      shouldlogin: true,
-      data: foundData,
-    };
+    if(foundData.password==req.body.password){
 
-    
-    // res.render('ALoginHome',{usersName:req.session.username});
-    res.send(toSend);
-    //  console.log(req.body);
+      req.session.username=foundData.username;
+      req.session.email=foundData.email;
+      
+      // console.log(req.session.email,req.session.username);
+      const toSend = {
+        shouldlogin: true,
+        data: foundData,
+      };
+  
+      
+      // res.render('ALoginHome',{usersName:req.session.username});
+      res.send(toSend);
+      //  console.log(req.body);
+    }else{
+     
+          res.send({
+            IP:"you have entered Invalid Password!"
+          })
+         }
   } else {
     const toSendData = {
       shouldlogin: false,

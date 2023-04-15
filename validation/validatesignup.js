@@ -3,6 +3,7 @@ const validator = require('validator');
 function validateSignUpData(data) {
   let errors = {};
 
+  
   // Validate email
   if (!validator.isEmail(data.email)) {
     errors.email = 'Email is invalid';
@@ -18,10 +19,10 @@ function validateSignUpData(data) {
     errors.confirmPassword = 'Passwords must match';
   }
 
-  return {
+  return( {
     errors,
-    isValid: Object.keys(errors).length === 0
-  };
+    isValid: Object.keys(errors).length
+  });
 }
 
 module.exports = validateSignUpData;

@@ -50,6 +50,7 @@ router.post("/", (req, res) => {
         filename: req.file.filename,
         uuid: uuid4(),
         path : req.file.path,
+        email:req.session.email,
         size: req.file.size
     })
       
@@ -77,7 +78,7 @@ router.post('/send',async(req,res)=>{
   
   // console.log(file);
   if(file.sender){
-    return res.status(422).send({error:'Email already sent.'})
+    return res.status(422).send({error:'Email already sent.'}) 
   }
 
   file.sender= emailFrom;

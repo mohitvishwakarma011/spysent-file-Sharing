@@ -30,7 +30,7 @@ app.use(session({
   secret: 'your_secret_key_here',
   resave: false,
   saveUninitialized: true,
-  cookie: { secure: false }
+  cookie: { secure: false,httpOnly:true }
 }))
 
 //Template engine
@@ -47,8 +47,9 @@ app.use("/files/download", require("./routes/download"));
 app.use("/aloginhome", require("./routes/aloginhome"));
 app.use("/logout", require("./routes/logout"));
 app.use("/sendfile", require("./routes/sendfile"));
+app.use("/history", require("./routes/history"));
 
 
 app.listen(PORT, () => {
-  console.log(`server is listenong on the port - ${PORT}`);
+  console.log(`server is listenong on the port - ${PORT}`); 
 });

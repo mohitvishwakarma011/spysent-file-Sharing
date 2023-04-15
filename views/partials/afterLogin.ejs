@@ -18,14 +18,8 @@
             <a
               class="nav-link active navbar-margin"
               aria-current="page"
-              href="#"
-            >
-              <img
-              style="height:23px;width:27px"
-                class="home-logo "
-                src="/house-chimney-solid.svg"
-                alt="Image is not shown!"
-              />
+              href="/aloginhome"
+            >Home
             </a>
           </li>
           <li class="nav-item">
@@ -38,9 +32,9 @@
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              <img class="icons" src="/user-solid.svg" alt="users" />
+              Users
             </a>
-            <ul class="dropdown-menu navbar-margin">
+            <ul class="dropdown-menu navbar-margin user-dropdown-menu">
               <li><a class="dropdown-item " href="#"><%= userName %></a></li>
               <li><a class="dropdown-item " href="/logout">logOut</a></li>
               <li><hr class="dropdown-divider" /></li>
@@ -57,11 +51,11 @@
               data-bs-toggle="dropdown"
               aria-expanded="false"
             >
-              <img class="icons" src="/file-import-solid.svg" alt="send-files" />
+             Files
             </a>
-            <ul class="dropdown-menu">
+            <ul class="dropdown-menu files-dropdown-menu">
               <li><a class="dropdown-item" href="/sendfile">send-files</a></li>
-              <li><a class="dropdown-item" href="#">history</a></li>
+              <li><a class="dropdown-item" href="/history">history</a></li>
               <li><hr class="dropdown-divider" /></li>
               <li>
                 <a class="dropdown-item" href="#">make group</a>

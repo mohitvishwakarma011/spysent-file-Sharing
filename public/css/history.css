@@ -1,3 +1,4 @@
+
 *{
     margin: 0;
     padding: 0;
@@ -16,7 +17,7 @@ body{
     background-color: #051622ed;
 
 }
-/* -----------------------navbar------------------------------------ */
+/* -----------------Navbar------------------------------ */
 .bg-custom{
     background-color: #051622;
 }
@@ -108,10 +109,20 @@ li.nav-item {
     
 }
 
-/* ----------------------------------- */
+/* ------------------------------------------------------ */
 
-.main-div,.container{
-    height: 100%;
-    width: 100%;
-    background-color: #00000000;
+body>h2{
+    color: #1BA098;
+    margin: 7% 22%;
+}
+
+.table{
+    width: 90%;
+    margin: 130px 80px;
+}
+
+.table-info {
+    --bs-table-color: #051622;
+    --bs-table-bg: #1BA098;
+    --bs-table-border-color: #051622;
 }

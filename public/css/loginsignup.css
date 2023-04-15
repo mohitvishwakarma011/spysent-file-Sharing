@@ -3,15 +3,19 @@
     padding: 0;
     box-sizing: border-box;
     /* overflow: hidden; */
+    font-family: BrandonTextWeb-Bold,sans-serif;
 }
 
 body,html{
     height: 100%;
     width: 100%;
+   
   
 
 }
-
+body{
+    background-color: #051622ed;
+}
 .container{
     height: 100%;
     width: 100%;
@@ -41,6 +45,8 @@ body,html{
     perspective: 1000px;
     border-radius: 12px;
     margin-top: 65px;
+    --bs-card-bg:#287672;
+    color:#DEB992;
 }
 
 .inner-box{
@@ -79,15 +85,16 @@ body,html{
 .input-box{
     width: 100%;
     background: transparent;
-    border: 2px solid rgb(0, 0, 0);
+    border: none;
+    border-bottom: 2px solid #DEB992;
     margin: 6px;
     height: 32px;
-    border-radius: 32px;
+    border-radius: 7px;
     padding: 0 10px;
     box-sizing: border-box;
     outline: none;
     text-align: center;
-    color: #000000;
+    color: #051622;
 }
 
 ::placeholder{
@@ -97,7 +104,7 @@ body,html{
 }
 
 button{
-    width: 100%;
+    
     background: transparent;
     border: 1px solid white;
     margin: 35px 0 7px 6px;
@@ -113,16 +120,21 @@ button{
 
 .submit-btn{
     position: relative;
+    width: 100%;
+    border: 2px solid #DEB992;
+    color: #DEB992;
+    font-size: 18.7px;
+    font-weight: bold;
 }
 .submit-btn::after{
     content: '\27a4';
-    color: #333;
+    color: #051622;
     line-height: 32px;
     font-size: 17px;
     height: 32px;
     width: 32px;
     border-radius: 50%;
-    background: white;
+    background: #DEB992;
     position: absolute;
     right: -1px;
     top: -1px;
@@ -137,99 +149,95 @@ span{
 .card .btn{
     margin-top: 70px;
     margin-top: 20px;
-    /* outline: none; */
+    margin-left: 60px;
+    
+    outline: none;
+    
+    padding: 0px 7px;
 
 }
+
+
 
 
 
 .card a{
-    color: #fff;
+    color: #051622;
     text-decoration: none;
     display: block;
     text-align: center;
-    font-size: 13px;
+    font-size: 15px;
     margin-top: 8px;
+    border-bottom: 2px solid;
+    width: 52%;
+    margin-left: 60px;
 
 }
 
-/* .container .go-home{
-    width: 200px;
-    background: transparent;
-    border: 1px solid white;
-    margin: 35px 0 10px;
-    height: 32px;
-    
-    border-radius: 20px;
-    padding: 0px 10px;
-    box-sizing: border-box;
-    outline: none;
-    color: #fff;
-    cursor:pointer;
-    text-align: center;
-    padding: 3px;
-    font-size:17px ;
-    box-shadow:0 0 16px 6px rgba(0,0,0,0.3);
-    text-decoration: none;
-
-} */
-
-/* .go-home:focus{
-    text-decoration: none;
-} */
 
 
 /* CSS code for the modal */
 .modal {
     position: absolute;
-    top: 35%;
+    top: 24%;
     left: 0;
     right: 0;
     bottom: 0;
     margin-left: 25%;
-    background:linear-gradient(rgb(240 190 249),rgb(221 166 209));
-    display: none;
-    justify-content: center;
-    align-items: center;
-    height: 185px;
+    height: fit-content;
     width: 50%;
     border-radius: 20px;
+    overflow: visible;
+    
     
   }
   
   .modal-content {
-    background-color: transparent;
+    background-color: #051622;
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
     text-align: center;
    height: 100%;
+   color: #DEB992;
   }
   
   .modal-content h2 {
     margin-top: 0;
   }
   
-  .modal-content button {
-    margin-top: 10px;
-    height: 35px;
-    width: 67px;
-    /* border: 4px solid; */
-    background: #c0bbbb;
-    text-align: center;
-  }
+ 
   
   .modal.show {
     display: flex;
   }
   
+  #close-valid-modal-button{
+    margin-top: 10px;
+    height: 35px;
+    width: 67px;
+    background: #1BA098;
+    text-align: center;
+    margin-left: 45%;
+    font-weight: bold;
+    font-size: 14px;
+    color: #051622;
+    border: none;
+  }
 
+    button#close-modal-button {
+        width: 20%;
+        margin-left: 40%;
+        background-color: #1BA098;
+        border: none;
+        font-size: 16px;
+  }
+  button#close-modal-button:hover{
+    background-color: #DEB992;
+
+  }
   /* ________________________________________________________________________ */
 
-  .navbar-brand{
-    font-weight: bold;
-    color: #0b0b0b;
-}
 
 .main-div,.container{
     height: 100%;
@@ -237,31 +245,98 @@ span{
     background-color: #00000000;
 }
 
-.content-div{
-height: 100%;
+.container-fluid{
+    margin-left: 55px;
+}
+
+.navbar-toggler-icon{
+    background-image:url('../134216_menu_lines_hamburger_icon.svg')
+}
+
+/* ------------------Navbar CSS--------------------- */
+
+.bg-custom{
+    background-color: #051622;
+ }
+ 
+.navbar-brand{
+    font-weight: bold;
+    color: #1BA098;
+    margin:0px;
+    padding: 0px 5px 6px;
+    transition: 0.3s color;
+    
+   
+}
+.navbar-brand:hover{
+    color:#DEB992 ;
+    border-bottom: 2px solid #DEB992;
+    
 }
 
 
-.bg-custom{
-   background-color: #ffffff;
+.navbar-collapse .navbar-nav .nav-item>a{
+    color: #1BA098 !important ;
+    border-bottom: 2px solid #051622;
+
+    
+} 
+
+.navbar-collapse .nav-item:hover>a{
+    color:#DEB992 !important;
+    border-color: #DEB992;
+
 }
 
 .navbar-margin{
     margin-left:25px;
 }
 
-.icons{
-    height: 23px;
-    width: 27px;
+
+.navbar-nav{
+    margin-left: 50px
 }
 
-.navbar {
-    box-shadow: 9px 1px 20px 1px grey;
+li.nav-item {
+    margin-right: 30px;
 }
+
 .dropdown-menu[data-bs-popper] {
-    left: 50px;
+   left: unset;
+   margin-top: 10px
 }
 
-.container-fluid{
-    margin-left: 55px;
+
+.user-dropdown-menu{
+
+   
+    left: 25% !important;
+    background-color: #051622 !important;
+    
 }
+.user-dropdown-menu a{
+    color: #DEB992;
+}
+.user-dropdown-menu li:hover .dropdown-item{
+    background-color: #0c324edb !important;
+    color: #DEB992 !important;
+    
+}
+
+.files-dropdown-menu{
+
+   
+    left: 25% !important;
+    background-color: #051622 !important;
+    
+}
+.files-dropdown-menu a{
+    color: #DEB992;
+}
+.files-dropdown-menu li:hover .dropdown-item{
+    background-color: #0c324edb !important;
+    color: #deb99265 !important;
+    
+}
+
+/* ----------------------------- */
