@@ -55,19 +55,27 @@
                     <div class="email-container">
                         <form id="form" action="">
         
+                            <!-- <div class="field"> -->
+                                <!-- <label for="fromEmail">Your email</label> -->
+                                <!-- <input id="fromEmail" type="email" required> -->
+                            <!-- </div> -->
                             <div class="field">
-                                <label for="fromEmail">Your email</label>
-                                <input id="fromEmail" type="email">
-                            </div>
-                            <div class="field">
-                                <label for="toEmail">Receiver's email</label>
-                                <input id="toEmail" type="email">
+                                <label for="toEmail" >Receiver's email</label>
+                                <input id="toEmail" type="email" required>
                             </div>
                             <button  type="submit">send</button>
                         </form>
                     </div>
                 </div>
-                <div class="toast">Email sent </div>
+                <!-- <div class="toast">Email sent </div> -->
+                <div class="toast align-items-center text-bg-primary border-0" role="alert" aria-live="assertive" aria-atomic="true">
+                    <div class="d-flex">
+                      <div class="toast-body">
+                        Hello, world! This is a toast message.
+                      </div>
+                      <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+                    </div>
+                  </div>
             </section>
 
         </div>
@@ -106,6 +114,7 @@ const copyBtn= document.getElementById("copyBtn");
 
 const emailForm = document.querySelector("#form");
 
+const Toastbody = document.querySelector(".toast-body");
 const Toast = document.querySelector(".toast");
 
 dropZone.addEventListener("dragover", (e)=>{
@@ -194,7 +203,7 @@ const showLink=({file:url})=>{
      bgProgress.style.width=`${0}%`;
      progressBar.style.width=`${0}%`;
      sharingContainer.style.display="block";
-    emailForm[2].removeAttribute("disabled");
+    
 
      linkUrl.value= url;
 }
@@ -205,13 +214,13 @@ emailForm.addEventListener("submit",(e)=>{
     const url = linkUrl.value.split('/').splice(-1,1)[0];
     const formData={
         uuid:url,
-        emailFrom:emailForm.elements["fromEmail"].value,
+        // emailFrom:emailForm.elements["fromEmail"].value,
         emailTo:emailForm.elements["toEmail"].value
     }
 
-    emailForm.elements["fromEmail"].value="";
+    // emailForm.elements["fromEmail"].value="";
     emailForm.elements["toEmail"].value="";
-    emailForm[2].setAttribute("disabled","true");
+    
     console.table(formData);
 
     fetch(emailUrl,{
@@ -223,14 +232,17 @@ emailForm.addEventListener("submit",(e)=>{
     }).then(response=>response.json()).then(({success})=>{
         if(success){
             sharingContainer.style.display="none";
+            showtoast("Email sent");
+        }else{
+            showtoast("e-mail must be different!")
         }
     })
 
-    showtoast("Email sent");
+    
 })
 let tostTimer;
 const showtoast=(msg)=>{
-    Toast.innerText=msg;
+    Toastbody.innerHTML=msg;
     Toast.classList.add("show");
 
    toastTimer= setTimeout(()=>{

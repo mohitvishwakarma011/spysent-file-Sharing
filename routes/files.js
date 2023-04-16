@@ -64,7 +64,17 @@ router.post("/", (req, res) => {
 
 
 router.post('/send',async(req,res)=>{
-  const {uuid,emailFrom,emailTo}= req.body;
+  var {uuid,emailTo}= req.body;
+
+  emailFrom=req.session.email;
+
+  if(emailFrom==emailTo){
+    res.send({success:false});
+
+  }else{
+
+  
+ 
   
   //validate request
 
@@ -104,6 +114,7 @@ router.post('/send',async(req,res)=>{
   })
 
   res.send({success:true});
+}
 })
 
 module.exports = router;

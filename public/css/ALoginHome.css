@@ -115,3 +115,23 @@ li.nav-item {
     width: 100%;
     background-color: #00000000;
 }
+
+.greet-col{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    
+}
+
+.greet-col h3{
+    color: #1BA098;
+    font-size: 40px;
+}
+
+.greet-col h2{
+    color: #DEB992;
+    font-size: 61px;
+    font-weight: bold;
+    margin-top: 30px;
+}

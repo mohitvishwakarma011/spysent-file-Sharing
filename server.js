@@ -1,4 +1,5 @@
 require("dotenv").config();
+const jwt = require('jsonwebtoken');
 
 const express = require("express");
 const app = express();
@@ -48,6 +49,8 @@ app.use("/aloginhome", require("./routes/aloginhome"));
 app.use("/logout", require("./routes/logout"));
 app.use("/sendfile", require("./routes/sendfile"));
 app.use("/history", require("./routes/history"));
+app.use("/forgot-password", require("./routes/forgot-password"));
+app.use("/reset-password", require("./routes/reset-password"));
 
 
 app.listen(PORT, () => {

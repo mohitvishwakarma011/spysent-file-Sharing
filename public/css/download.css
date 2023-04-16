@@ -1,5 +1,5 @@
 :root {
-    --main-bg-color: #edf5fe;
+    --main-bg-color: #051622;;
     --light-blue: #03a9f4;
     --dark-blue: #028bca;
   }
@@ -12,7 +12,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #333;
+    color:#DEB992;
   }
 
   .logo {
@@ -22,13 +22,14 @@
     width: 150px;
   }
 section.download {
-    background: #fff;
+    background:#1ba09852;
     width: 430px;
     max-width: 90%;
     border-radius: 25px;
     box-shadow: 0px 20px 20px 0px #00000017;
     padding: 2rem;
     text-align: center;
+    position: relative;
 }
 .download__icon {
     height: 8rem;
@@ -42,11 +43,11 @@ section.download {
     font-size: 18px;
     padding: 8px 40px;
     margin-top: 15px;
-    background: var(--light-blue);
+    background: #7afff7db;
     text-decoration: none;
     border: none;
     border-radius: 5px;
-    color: #fff;
+    color: black;
     cursor: pointer;
     transition: all .3s ease-in-out;
   }
