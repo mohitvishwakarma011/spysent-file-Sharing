@@ -4,7 +4,7 @@ const mongoose = require("mongoose");
 
 function connectDB() {
   mongoose
-    .connect("mongodb://0.0.0.0:27017/File-Sharing")
+    .connect(process.env.MONGO_CONNECTION_URL)
     .then(() => {
       console.log("connected to database.");
     })

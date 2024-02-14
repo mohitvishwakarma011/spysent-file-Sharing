@@ -1,9 +1,11 @@
-const router  = require('express').Router();
+const isAuthenticate = require("../config/isAuthenticate");
 
-router.get('/',(req,res)=>{
-    console.log(req.session.username);
-    res.render('sendfile',{userName:req.session.username});
-   
-})
+const router = require("express").Router();
+
+router.get("/", isAuthenticate, (req, res) => {
+  console.log(req.user);
+  res.render("sendfile", { userName: req.user.username });
+  // res.render("sendfile");
+});
 
 module.exports = router;
