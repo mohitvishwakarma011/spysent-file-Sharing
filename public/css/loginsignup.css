@@ -1,342 +1,294 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    /* overflow: hidden; */
-    font-family: BrandonTextWeb-Bold,sans-serif;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* overflow: hidden; */
+  font-family: BrandonTextWeb-Bold, sans-serif;
 }
 
-body,html{
-    height: 100%;
-    width: 100%;
-   
-  
-
+body,
+html {
+  height: 100%;
+  width: 100%;
 }
-body{
-    background-color: #051622ed;
-}
-.container{
-    height: 100%;
-    width: 100%;
-    font-family: sans-serif;
-    background: rgb(200, 195, 195);
-    color: #000000;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-
-   
-    
+body {
+  background-color: #051622ed;
 }
 
-.navbar-margin{
-    margin-left:25px;
-}
-.container.blur{
-    filter: blur(5px);
-}
-
-.card{
-    width:350px;
-    height: 500px;
-    box-shadow: 0 0 19px 0px rgba(0,0,0,0.3);
-    perspective: 1000px;
-    border-radius: 12px;
-    margin-top: 65px;
-    --bs-card-bg:#287672;
-    color:#DEB992;
+.container {
+  height: 100% !important;
+  width: 100% !important;
+  font-family: sans-serif;
+  color: #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  margin: auto;
+  background-color: #00000000;
 }
 
-.inner-box{
-    position: relative;
-    width: 100%;
-    height: 100%;
-   
-    transform-style: preserve-3d;
-    transition: transform 1s;
-
+.navbar-margin {
+  margin-left: 25px;
 }
-.card-front, .card-back{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background-position: center;
-    background-size: cover;
-    background-color: #80808005;
-    box-sizing: border-box;
-    backface-visibility: hidden;
-    padding: 50px;
-    border-radius: 12px;
+.container.blur {
+  filter: blur(5px);
 }
 
-.card-back{
-    transform: rotateY(180deg);
+.card {
+  width: 350px;
+  height: 500px;
+  border-radius: 12px;
+  --bs-card-bg: #287672;
+  color: #deb992;
 }
 
-.card h2{
-    font-weight: normal;
-    font-size: 24px;
-    text-align: center;
-    margin-bottom: 20px;
+.inner-box {
+  position: relative;
+  width: 100%;
+  height: 100%;
+
+  transform-style: preserve-3d;
+  transition: transform 1s;
+}
+.card-front,
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  background-color: #80808005;
+  box-sizing: border-box;
+  backface-visibility: hidden;
+  padding: 50px;
+  border-radius: 12px;
 }
 
-.input-box{
-    width: 100%;
-    background: transparent;
-    border: none;
-    border-bottom: 2px solid #DEB992;
-    margin: 6px;
-    height: 32px;
-    border-radius: 7px;
-    padding: 0 10px;
-    box-sizing: border-box;
-    outline: none;
-    text-align: center;
-    color: #051622;
+.card h2 {
+  font-weight: normal;
+  font-size: 24px;
+  text-align: center;
+  margin-bottom: 20px;
 }
 
-::placeholder{
-    color: #00000090;
-    font-size: 20px;
-    
+.input-box {
+  width: 100%;
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid #deb992;
+  margin: 6px;
+  height: 32px;
+  border-radius: 7px;
+  padding: 0 10px;
+  box-sizing: border-box;
+  outline: none;
+  text-align: center;
+  color: #051622;
 }
 
-button{
-    
-    background: transparent;
-    border: 1px solid white;
-    margin: 35px 0 7px 6px;
-    height: 32px;
-    font-size: 12px;
-    border-radius: 20px;
-    padding: 0px 10px;
-    box-sizing: border-box;
-    outline:none;
-    color: #000000;
-    cursor: pointer;
+::placeholder {
+  color: #00000090;
+  font-size: 20px;
 }
 
-.submit-btn{
-    position: relative;
-    width: 100%;
-    border: 2px solid #DEB992;
-    color: #DEB992;
-    font-size: 18.7px;
-    font-weight: bold;
-}
-.submit-btn::after{
-    content: '\27a4';
-    color: #051622;
-    line-height: 32px;
-    font-size: 17px;
-    height: 32px;
-    width: 32px;
-    border-radius: 50%;
-    background: #DEB992;
-    position: absolute;
-    right: -1px;
-    top: -1px;
-
+button {
+  background: transparent;
+  border: 1px solid white;
+  margin: 35px 0 7px 6px;
+  height: 32px;
+  font-size: 12px;
+  border-radius: 20px;
+  padding: 0px 10px;
+  box-sizing: border-box;
+  outline: none;
+  color: #000000;
+  cursor: pointer;
 }
 
-span{
-    font-size: 13px;
-    margin-left: 10px;
+.submit-btn {
+  position: relative;
+  width: 100%;
+  border: 2px solid #deb992;
+  color: #deb992;
+  font-size: 18.7px;
+  font-weight: bold;
+}
+.submit-btn::after {
+  content: "\27a4";
+  color: #051622;
+  line-height: 32px;
+  font-size: 17px;
+  height: 32px;
+  width: 32px;
+  border-radius: 50%;
+  background: #deb992;
+  position: absolute;
+  right: -1px;
+  top: -1px;
 }
 
-.card .btn{
-    margin-top: 70px;
-    margin-top: 20px;
-    margin-left: 60px;
-    
-    outline: none;
-    
-    padding: 0px 7px;
-
+span {
+  font-size: 13px;
+  margin-left: 10px;
 }
 
+.card .btn {
+  margin-top: 70px;
+  margin-top: 20px;
+  margin-left: 60px;
 
+  outline: none;
 
-
-
-.card a{
-    color: #051622;
-    text-decoration: none;
-    display: block;
-    text-align: center;
-    font-size: 15px;
-    margin-top: 8px;
-    border-bottom: 2px solid;
-    width: 52%;
-    margin-left: 60px;
-
+  padding: 0px 7px;
 }
 
-
+.card a {
+  color: #051622;
+  text-decoration: none;
+  display: block;
+  text-align: center;
+  font-size: 15px;
+  margin-top: 8px;
+  border-bottom: 2px solid;
+  width: 52%;
+  margin-left: 60px;
+}
 
 /* CSS code for the modal */
 .modal {
-    position: absolute;
-    top: 24%;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    margin-left: 25%;
-    height: fit-content;
-    width: 50%;
-    border-radius: 20px;
-    overflow: visible;
-    
-    
-  }
-  
-  .modal-content {
-    background-color: #051622;
-    padding: 20px;
-    border-radius: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-    text-align: center;
-   height: 100%;
-   color: #DEB992;
-  }
-  
-  .modal-content h2 {
-    margin-top: 0;
-  }
-  
- 
-  
-  .modal.show {
-    display: flex;
-  }
-  
-  #close-valid-modal-button{
-    margin-top: 10px;
-    height: 35px;
-    width: 67px;
-    background: #1BA098;
-    text-align: center;
-    margin-left: 45%;
-    font-weight: bold;
-    font-size: 14px;
-    color: #051622;
-    border: none;
-  }
-
-    button#close-modal-button {
-        width: 20%;
-        margin-left: 40%;
-        background-color: #1BA098;
-        border: none;
-        font-size: 16px;
-  }
-  button#close-modal-button:hover{
-    background-color: #DEB992;
-
-  }
-  /* ________________________________________________________________________ */
-
-
-.main-div,.container{
-    height: 100%;
-    width: 100%;
-    background-color: #00000000;
+  position: absolute;
+  top: 24%;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin-left: 25%;
+  height: fit-content;
+  width: 50%;
+  border-radius: 20px;
+  overflow: visible;
 }
 
-.container-fluid{
-    margin-left: 55px;
+.modal-content {
+  background-color: #051622;
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  text-align: center;
+  height: 100%;
+  color: #deb992;
 }
 
-.navbar-toggler-icon{
-    background-image:url('../134216_menu_lines_hamburger_icon.svg')
+.modal-content h2 {
+  margin-top: 0;
+}
+
+.modal.show {
+  display: flex;
+}
+
+#close-valid-modal-button {
+  margin-top: 10px;
+  height: 35px;
+  width: 67px;
+  background: #1ba098;
+  text-align: center;
+  margin-left: 45%;
+  font-weight: bold;
+  font-size: 14px;
+  color: #051622;
+  border: none;
+}
+
+button#close-modal-button {
+  width: 20%;
+  margin-left: 40%;
+  background-color: #1ba098;
+  border: none;
+  font-size: 16px;
+}
+button#close-modal-button:hover {
+  background-color: #deb992;
+}
+/* ________________________________________________________________________ */
+
+/* .main-div,
+.container {
+  height: 100%;
+  width: 100%;
+} */
+
+.navbar-toggler-icon {
+  background-image: url("../134216_menu_lines_hamburger_icon.svg");
 }
 
 /* ------------------Navbar CSS--------------------- */
 
-.bg-custom{
-    background-color: #051622;
- }
- 
-.navbar-brand{
-    font-weight: bold;
-    color: #1BA098;
-    margin:0px;
-    padding: 0px 5px 6px;
-    transition: 0.3s color;
-    
-   
-}
-.navbar-brand:hover{
-    color:#DEB992 ;
-    border-bottom: 2px solid #DEB992;
-    
+.bg-custom {
+  background-color: #051622;
 }
 
-
-.navbar-collapse .navbar-nav .nav-item>a{
-    color: #1BA098 !important ;
-    border-bottom: 2px solid #051622;
-
-    
-} 
-
-.navbar-collapse .nav-item:hover>a{
-    color:#DEB992 !important;
-    border-color: #DEB992;
-
+.navbar-brand {
+  font-weight: bold;
+  color: #1ba098;
+  margin: 0px;
+  padding: 0px 5px 6px;
+  transition: 0.3s color;
+}
+.navbar-brand:hover {
+  color: #deb992;
+  border-bottom: 2px solid #deb992;
 }
 
-.navbar-margin{
-    margin-left:25px;
+.navbar-collapse .navbar-nav .nav-item > a {
+  color: #1ba098 !important ;
+  border-bottom: 2px solid #051622;
 }
 
+.navbar-collapse .nav-item:hover > a {
+  color: #deb992 !important;
+  border-color: #deb992;
+}
 
-.navbar-nav{
-    margin-left: 50px
+.navbar-margin {
+  margin-left: 25px;
+}
+
+.navbar-nav {
+  margin-left: 50px;
 }
 
 li.nav-item {
-    margin-right: 30px;
+  margin-right: 30px;
 }
 
 .dropdown-menu[data-bs-popper] {
-   left: unset;
-   margin-top: 10px
+  left: unset;
+  margin-top: 10px;
 }
 
-
-.user-dropdown-menu{
-
-   
-    left: 25% !important;
-    background-color: #051622 !important;
-    
+.user-dropdown-menu {
+  left: 25% !important;
+  background-color: #051622 !important;
 }
-.user-dropdown-menu a{
-    color: #DEB992;
+.user-dropdown-menu a {
+  color: #deb992;
 }
-.user-dropdown-menu li:hover .dropdown-item{
-    background-color: #0c324edb !important;
-    color: #DEB992 !important;
-    
+.user-dropdown-menu li:hover .dropdown-item {
+  background-color: #0c324edb !important;
+  color: #deb992 !important;
 }
 
-.files-dropdown-menu{
-
-   
-    left: 25% !important;
-    background-color: #051622 !important;
-    
+.files-dropdown-menu {
+  left: 25% !important;
+  background-color: #051622 !important;
 }
-.files-dropdown-menu a{
-    color: #DEB992;
+.files-dropdown-menu a {
+  color: #deb992;
 }
-.files-dropdown-menu li:hover .dropdown-item{
-    background-color: #0c324edb !important;
-    color: #deb99265 !important;
-    
+.files-dropdown-menu li:hover .dropdown-item {
+  background-color: #0c324edb !important;
+  color: #deb99265 !important;
 }
 
 /* ----------------------------- */

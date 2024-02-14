@@ -1,8 +1,9 @@
-const router = require('express').Router();
+const authenticate = require("../config/isAuthenticate");
 
-router.get('/',(req,res)=>{
-    
-    res.render('ALoginHome',{userName:req.session.username});
-})
+const router = require("express").Router();
+
+router.get("/", authenticate, (req, res) => {
+  res.render("ALoginHome", { userName: req.session.username });
+});
 
 module.exports = router;

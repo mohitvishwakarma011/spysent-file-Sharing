@@ -19,25 +19,17 @@
     <div class="bg-gray-100 h-full pt-8">
       <div class="w-4/12 mx-auto px-4 py-5 shadow-xl rounded-lg bg-white">
         <%-include('./partials/messages.ejs') %>
-        <h2 class="text-center text-2xl">Register</h2>
+        <h2 class="text-center text-2xl">Sign In</h2>
         <form
           class="flex flex-col"
           id="register-form"
-          action="/users/new"
+          action="/users/exist"
           method="post"
         >
           <input
-            type="text"
-            class="p-2 my-1 border rounded-md"
-            placeholder="Username"
-            name="username"
-            value="<%= typeof username != 'undefined' ? username : '' %>"
-            required
-          />
-          <input
             type="email"
             class="p-2 my-1 border rounded-md"
-            placeholder="Your Email Id"
+            placeholder="Email Id"
             name="email"
             value="<%= typeof email != 'undefined' ? email : '' %>"
             required
@@ -51,18 +43,9 @@
             value="<%= typeof password != 'undefined' ? password : '' %>"
             required
           />
-          <input
-            type="password"
-            class="p-2 my-1 border rounded-md"
-            placeholder="Re-enter password"
-            name="re_password"
-            id="re_signup_pass"
-            value="<%= typeof re_password != 'undefined' ? re_password : '' %>"
-            required
-          />
           <button type="submit" class="text-xl" id="submit-btn">Submit</button>
         </form>
-        <a href="/users/login" type="button" class="btn"> I've an account </a>
+        <a href="/users/" type="button" class="btn">Sign Up here</a>
       </div>
     </div>
   </body>

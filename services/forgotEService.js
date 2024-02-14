@@ -1,6 +1,6 @@
 const nodemailer = require('nodemailer');
 
-async function sendMail({from, to , subject, text,html}){
+async function sendMail({from, to , subject,html}){
 
     let transporter = nodemailer.createTransport({
                                 host: process.env.SMTP_HOST,
@@ -13,13 +13,12 @@ async function sendMail({from, to , subject, text,html}){
                             })
 
     let info = await transporter.sendMail({
-                        from : `spySent <${from}>`,
+                        from,
                         to,
                         subject,
-                        text,
                         html
     });
-    // console.log(info);
+    console.log(info);
 }
 
 module.exports= sendMail;

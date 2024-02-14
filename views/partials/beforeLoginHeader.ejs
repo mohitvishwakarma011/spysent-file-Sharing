@@ -1,92 +1,58 @@
-<nav class="navbar navbar-expand-lg bg-custom">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="">spySent</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item ">
-            <a
-              class="nav-link active navbar-margin home-btn"
-              aria-current="page"
-              href="http://localhost:3000/"
-            >
-              Home
-            </a>
-          </li>
-          <li class="nav-item">
-            <!-- <a class="nav-link" href="#">users</a> -->
+<nav class="bg-white h-16">
+  <div class="flex justify-between items-center">
+    <a class="font-bold text-black text-3xl px-3" href="/">spySent</a>
+    <div class="me-4" id="">
+      <ul class="flex mx-2 pt-1 text-xl items-center">
+        <li
+          class="ms-2 p-2 rounded-sm border-b-2 hover:border-b-2 hover:border-black transition duration-300"
+        >
+          <a class="" aria-current="page" href="http://localhost:3000/">
+            Home
+          </a>
+        </li>
+        <li
+          class="ms-2 p-2 rounded-sm border-b-2 hover:border-b-2 hover:border-black transition duration-300"
+        >
+          <a
+            class=""
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Users
+          </a>
+        </li>
+        <li
+          class="ms-2 p-2 rounded-sm border-b-2 hover:border-b-2 hover:border-black transition duration-300"
+        >
+          <a class="" href="/users">logIn/signUp</a>
+        </li>
+        <li
+          class="ms-2 p-2 rounded-sm border-b-2 hover:border-b-2 hover:border-black transition duration-300"
+        >
+          <a class="" href="#">having trouble?</a>
+        </li>
 
-            <a
-              class="nav-link dropdown-toggle navbar-margin "
-              href="#"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Users
-            </a>
-            <ul class="dropdown-menu navbar-margin user-dropdown-menu">
-              <li><a class="dropdown-item" href="/signup">logIn/signUp</a></li>
-              <!-- <li><a class="dropdown-item disabled" href="/">logOut</a></li> -->
-              <li><hr class="dropdown-divider" /></li>
-              <li>
-                <a class="dropdown-item" href="#">having trouble?</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown navbar-margin">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-             Files
-            </a>
-            <ul class="dropdown-menu files-dropdown-menu">
-              <li><a class="dropdown-item disabled" href="#" >send Files</a></li>
-              <!-- <li><a class="dropdown-item" href="#">Another action</a></li> -->
-              <!-- <li><hr class="dropdown-divider" /></li> -->
-              <!-- <li>
-                <a class="dropdown-item" href="#">Something else here</a>
-              </li> -->
-            </ul>
-          </li>
-          
-        </ul>
-        <!-- <form class="d-flex" role="search">
-          <input
-            class="form-control me-2"
-            type="search"
-            placeholder="Search"
-            aria-label="Search"
-          />
-          <button class="btn btn-outline-success" type="submit">
-            Search
-          </button>
-        </form> -->
-      </div>
+        <li
+          class="ms-2 p-2 rounded-sm border-b-2 hover:border-b-2 hover:border-black transition duration-300"
+        >
+          <a
+            class=""
+            href="#"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            Files
+          </a>
+        </li>
+        <li
+          class="ms-2 p-2 rounded-sm border-b-2 hover:border-b-2 hover:border-black transition duration-300"
+        >
+          <a class="" href="/sendfile">send Files</a>
+        </li>
+      </ul>
     </div>
-  </nav>
-  <!-- <div style="display: none;height: 200px;width: 200px;border: 2px solid red;position: absolute;left: 33%;top: 30%;" id="alertmodal">
-    you have to login before sharing any files!
-    <button id="okbutton">OK</button>
-  </div> -->
-  <!-- <script>
-    function alertmodal(){
-      var alertmodal = document.getElementById('alertmodal');
-      alertmodal.style.display='block';
-    }
-
-  </script> -->
+  </div>
+</nav>
