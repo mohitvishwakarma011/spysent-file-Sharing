@@ -1,4 +1,4 @@
-const authenticate = (req, res, next) => {
+const authenticateUser = (req, res, next) => {
   if (req.isAuthenticated()) {
     return next();
   }
@@ -6,4 +6,4 @@ const authenticate = (req, res, next) => {
   res.redirect("/users/login");
 };
 
-module.exports = authenticate;
+module.exports = authenticateUser;

@@ -7,6 +7,7 @@ const path = require("path");
 const File = require("../models/file");
 
 const { v4: uuid4 } = require("uuid");
+const authenticateUser = require("../config/isAuthenticate");
 
 //________________________________________________________________________________________________________
 
@@ -27,7 +28,7 @@ let upload = multer({
 
 //_________________________________________________________________________________________________________
 
-router.post("/", (req, res) => {
+router.post("/",authenticateUser, (req, res) => {
   //store file
   upload(req, res, async (err) => {
     // Validate request
@@ -58,7 +59,7 @@ router.post("/", (req, res) => {
   //response-> link
 });
 
-router.post("/send", async (req, res) => {
+router.post("/send",authenticateUser, async (req, res) => {
   var { uuid, emailTo } = req.body;
 
   emailFrom = req.user.email;

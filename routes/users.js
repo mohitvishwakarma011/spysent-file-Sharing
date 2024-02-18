@@ -1,18 +1,26 @@
 const router = require("express").Router();
+const authenticateUser = require("../config/isAuthenticate");
 const UsersignUp = require("../models/userSignupSchema");
 const validateSignUpData = require("../validation/validatesignup");
 const bcrypt = require("bcrypt");
 const passport = require("passport");
 
 router.get("/", (req, res) => {
+  if(req.user) return res.redirect("/aloginhome");
+
   res.render("signup");
 });
 
 router.get("/login", (req, res) => {
+  if(req.user) return res.redirect("/aloginhome");
+
   res.render("login");
 });
 
 router.post("/new", async (req, res) => {
+  
+  if(req.user) return res.redirect("/aloginhome");
+
   const { username, email, password, re_password } = req.body;
 
   //validation:-

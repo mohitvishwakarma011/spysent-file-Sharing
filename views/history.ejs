@@ -1,35 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bootstrap demo</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
-      crossorigin="anonymous"
-    />
-    <link rel="stylesheet" href="/css/history.css" />
+    <title>Spysent - download</title>
+    <link rel="stylesheet" href="output.css" />
   </head>
-  <body>
+  <body class="h-full">
     <%- include('./partials/afterLogin.ejs',{userName}) %>
 
     <% if(!datum.length){ %>
     
       <h2>Nothing to show...You have not shared any files yet!</h2>
       <% }else {%>
-    <table class="table table-info">
-      <thead>
-
-        <tr>
+    <table class="w-[80%] h-[60%] rounded-xl mx-auto mt-16 pt-3 shadow-lg">
+      <thead class=" text-start">
+        <tr class="text-start">
           <th>File-Name</th>
           <th>Size</th>
           <th>CreatedAt</th>
           <th>Receiver</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class=" text-center mt-3">
 
         <% datum.forEach(file => { %>
         <tr>
@@ -41,18 +34,15 @@
           <% }else{ %>
             <td><%= file.receiver %></td>
           <% } %>
-
+            
 
         </tr>
+        
           <% }) %>
       </tbody>
       
     </table>
     <% } %>
-    <script
-    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-qKXV1j0HvMUeCBQ+QVp7JcfGl760yU08IQ+GpUo5hlbpg51QRiuqHAJz8+BrxE/N"
-    crossorigin="anonymous"
-  ></script>
+
 </body>
 </html>

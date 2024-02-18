@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon server.js,ejs,css",
+    "dev": "nodemon -e js,ejs,html -w . -w public -w views -w routes -w models server.js",
     "server": "node server.js"
   },
   "keywords": [],

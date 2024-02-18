@@ -15,6 +15,7 @@ app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
+app.use(require('express-status-monitor')());
 //requiring the database
 const connectDB = require("./config/db");
 connectDB();
