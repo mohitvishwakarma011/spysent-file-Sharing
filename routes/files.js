@@ -28,7 +28,7 @@ let upload = multer({
 
 //_________________________________________________________________________________________________________
 
-router.post("/",authenticateUser, (req, res) => {
+router.post("/",authenticateUser, async (req, res) => {
   //store file
   upload(req, res, async (err) => {
     // Validate request
@@ -44,13 +44,16 @@ router.post("/",authenticateUser, (req, res) => {
 
     const file = new File({
       filename: req.file.filename,
-      uuid: uuid4(),
       path: req.file.path,
-      email: req.user.email,
       size: req.file.size,
+      uuid: uuid4(),
+      email: req.user.email,
     });
 
     const response = await file.save();
+
+    console.log("response : "+response);
+    
     return res.json({
       file: `${process.env.APP_BASE_URL}/files/${response.uuid}`,
     });
