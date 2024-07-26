@@ -11,6 +11,7 @@ const path = require("path");
 const cors = require("cors");
 
 const PORT = process.env.PORT || 3000;
+//From here the express pipeline starts
 app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
