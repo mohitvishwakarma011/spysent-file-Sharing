@@ -11,8 +11,8 @@
       integrity="sha384-aFq/bzH65dt+w6FI2ooMVUpc+21e0SRygnTpmBvdBgSdnuTN7QbdgL+OapgHtvPp"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="/css/sendfile.css" />
-    <link rel="stylesheet" href="output.css" />
+    <link rel="stylesheet" href="/css/sendfile.css"/>
+    <link rel="stylesheet" href="output.css"/>
   </head>
   <body>
     <%- include('./partials/afterLogin.ejs') %>
@@ -147,7 +147,7 @@
 
         const files = e.dataTransfer.files;
         // console.log(files.length);
-        console.table(files);
+        // console.table(files);
         if (files.length) {
           // console.log("TRue");
           fileInput.files = files;
@@ -180,7 +180,7 @@
 
         xhr.onreadystatechange = function () {
           if (xhr.readyState == XMLHttpRequest.DONE) {
-            console.log(xhr.response);
+            // console.log(xhr.response);
             showtoast("file uploaded!");
             // console.log(xhr.response);
             showLink(JSON.parse(xhr.response));
@@ -206,7 +206,7 @@
       });
 
       const showLink = ({ file: url }) => {
-        console.log(url);
+        // console.log(url);
         fileInput.value = "";
         progressContainer.style.display = "none";
         bgProgress.style.width = `${0}%`;
@@ -228,7 +228,7 @@
         // emailForm.elements["fromEmail"].value="";
         emailForm.elements["toEmail"].value = "";
 
-        console.table(formData);
+        // console.table(formData);
 
         fetch(emailUrl, {
           method: "POST",
